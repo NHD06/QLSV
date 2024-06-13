@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm khen thưởng kỷ luật</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h2>Thêm khen thưởng kỷ luật</h2>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/school/add}" th:object="${awardsDisciplines}" method="post">
+                    <div class="form-group">
+                        <label for="student">Sinh viên:</label>
+                        <select th:field="*{student.id}" class="form-control" id="student" required>
+                            <option th:each="student : ${students}" th:value="${student.id}" th:text="${student.fullname}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Kiểu:</label>
+                        <select th:field="*{type}" class="form-control" id="type" required>
+                            <option value="1">Khen thưởng</option>
+                            <option value="0">Kỷ luật</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Cấp độ</label>
+                        <select th:field="*{level}" class="form-control">
+                            <!-- <option value="Khoa">Cấp Khoa</option> -->
+                            <option value="Trường">Cấp Trường</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Loại:</label>
+                        <input type="text" th:field="*{rewardType}" class="form-control" id="rewardType"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Mô tả:</label>
+                        <textarea th:field="*{description}" class="form-control" id="description" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Ngày:</label>
+                        <input type="date" th:field="*{date}" class="form-control" id="date" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <a class="btn btn-secondary" href="/school/list">Quay lại danh sách</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

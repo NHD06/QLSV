@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards and Disciplines</title>
+    <!-- Thêm các tệp CSS cần thiết -->
+</head>
+<body>
+    <h1>Awards and Disciplines</h1>
+    <ul>
+        <!-- Sử dụng Thymeleaf để lặp qua danh sách khen thưởng và kỷ luật và hiển thị chúng -->
+        <li th:each="award : ${awardsDisciplines}">
+            <!-- Hiển thị thông tin về mỗi khen thưởng hoặc kỷ luật -->
+            <p>Type: <span th:text="${award.type}"></span></p>
+            <p>Level: <span th:text="${award.level}"></span></p>
+            <p>Description: <span th:text="${award.description}"></span></p>
+            <p>Date: <span th:text="${award.date}"></span></p>
+        </li>
+    </ul>
+</body>
+</html>

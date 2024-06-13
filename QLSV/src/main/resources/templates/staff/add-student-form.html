@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Sinh Viên</title>
+</head>
+<body>
+    <h2>Thêm Sinh Viên</h2>
+    <div id="addStudentForm" style="display: none;">
+        <!-- Các trường nhập thông tin sinh viên ở đây -->
+        <form action="/addStudent" method="post">
+            <label for="studentCode">MSSV:</label><br>
+            <input type="text" id="studentCode" name="studentCode"><br>
+    
+            <label for="fullname">Họ Tên:</label><br>
+            <input type="text" id="fullname" name="fullname"><br>
+    
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+    
+            <label for="phoneNumber">Số Điện Thoại:</label><br>
+            <input type="text" id="phoneNumber" name="phoneNumber"><br>
+    
+            <label for="address">Địa Chỉ:</label><br>
+            <input type="text" id="address" name="address"><br>
+    
+            <label for="departmentId">Mã Khoa:</label><br>
+            <input type="text" id="departmentId" name="departmentId"><br>
+    
+            <label for="entryDate">Ngày Vào Học:</label><br>
+            <input type="date" id="entryDate" name="entryDate"><br>
+    
+            <label for="gender">Giới Tính:</label><br>
+            <select id="gender" name="gender">
+                <option value="1">Nam</option>
+                <option value="0">Nữ</option>
+            </select><br>
+    
+            <label for="status">Trạng Thái:</label><br>
+            <input type="text" id="status" name="status"><br>
+    
+            <label for="profileCode">Mã Hồ Sơ:</label><br>
+            <input type="text" id="profileCode" name="profileCode"><br>
+    
+            <label for="classCode">Mã Lớp:</label><br>
+            <input type="text" id="classCode" name="classCode"><br>
+    
+            <label for="educationLevel">Trình Độ:</label><br>
+            <input type="text" id="educationLevel" name="educationLevel"><br>
+    
+            <label for="major">Chuyên Ngành:</label><br>
+            <input type="text" id="major" name="major"><br>
+    
+            <label for="course">Khóa Học:</label><br>
+            <input type="text" id="course" name="course"><br>
+    
+            <label for="dateOfBirth">Ngày Sinh:</label><br>
+            <input type="date" id="dateOfBirth" name="dateOfBirth"><br>
+    
+            <label for="targetGroup">Nhóm Mục Tiêu:</label><br>
+            <input type="text" id="targetGroup" name="targetGroup"><br>
+    
+            <label for="birthPlace">Nơi Sinh:</label><br>
+            <input type="text" id="birthPlace" name="birthPlace"><br>
+    
+            <label for="bankName">Ngân Hàng:</label><br>
+            <input type="text" id="bankName" name="bankName"><br>
+    
+            <label for="accountHolderName">Tên Chủ Tài Khoản:</label><br>
+            <input type="text" id="accountHolderName" name="accountHolderName"><br>
+    
+            <label for="bankAccountNumber">Số Tài Khoản Ngân Hàng:</label><br>
+            <input type="text" id="bankAccountNumber" name="bankAccountNumber"><br>
+    
+            <label for="advisorName">Tên Cố Vấn:</label><br>
+            <input type="text" id="advisorName" name="advisorName"><br>
+    
+            <label for="advisorPhone">Số Điện Thoại Cố Vấn:</label><br>
+            <input type="text" id="advisorPhone" name="advisorPhone"><br>
+    
+            <label for="advisorEmail">Email Cố Vấn:</label><br>
+            <input type="email" id="advisorEmail" name="advisorEmail"><br>
+    
+            <input type="submit" value="Submit">
+            <button type="submit">Add Student</button>
+        </form>
+    </div>
+</body>
+</html>

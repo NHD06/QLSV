@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉnh sửa khen thưởng/kỷ luật</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h2>Chỉnh sửa khen thưởng/kỷ luật</h2>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/department/edit/{id}(id=${awardsDisciplines.id})}" th:object="${awardsDisciplines}" method="post">
+                    <div class="form-group">
+                        <label for="student">Sinh viên:</label>
+                        <input type="text" class="form-control" th:value="${awardsDisciplines.student.fullname}" readonly>
+                        <input type="hidden" th:field="*{student.id}">
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Loại:</label>
+                        <input type="text" class="form-control" th:value="${awardsDisciplines.type ? 'Khen thưởng' : 'Kỷ luật'}" readonly>
+                        <input type="hidden" th:field="*{type}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="level">Cấp độ:</label>
+                        <input type="text" class="form-control" th:value="${awardsDisciplines.level}" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rewardType">Loại:</label>
+                        <input type="text" class="form-control" id="rewardType" name="rewardType" th:value="${awardsDisciplines.rewardType}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Mô tả:</label>
+                        <textarea th:field="*{description}" class="form-control" id="description" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Ngày:</label>
+                        <input type="date" th:field="*{date}" class="form-control" id="date" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <a class="btn btn-secondary" href="/department/list">Quay lại danh sách</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
